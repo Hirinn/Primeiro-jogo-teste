@@ -10,4 +10,15 @@ if(keyboard_check(ord("D")) && place_free(x+4,y)){
 	}
 
 	
+	if(vida = 0){
+	room_restart()
+	}
+	
+	show_debug_message(vida)
+	
+	if(place_meeting(x+2,y,Obj_enemy)){
+	vida -=0.5
+	}else if(place_meeting(x-2,y,Obj_enemy)){
+	vida -=0.5
+	}
 	

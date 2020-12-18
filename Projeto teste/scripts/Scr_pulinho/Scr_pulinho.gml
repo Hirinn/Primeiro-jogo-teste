@@ -1,5 +1,5 @@
 function Scr_pulinho(){
-jump = keyboard_check(vk_up);
+jump = keyboard_check(ord("W"));
 
 vspd+= gravi;
 
