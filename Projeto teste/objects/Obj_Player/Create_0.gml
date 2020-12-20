@@ -12,4 +12,6 @@ vspd = 0;
 horizontal_speed = 0;
 accel = 1;
 decel = accel / 2;
-vida = 10; 
+
+vida_maxima = 6;
+vida = 6;

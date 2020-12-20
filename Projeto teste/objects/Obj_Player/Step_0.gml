@@ -1,5 +1,6 @@
 Scr_pulinho();
-
+ 
+ depth = -10;
 
 #region HORIZONTAL MOVEMENT
 	var horizontal_input = keyboard_check(key_right) - keyboard_check(key_left);
@@ -23,6 +24,12 @@ Scr_pulinho();
 		}
 		
 		horizontal_speed = 0;
+	}else if(place_meeting(x + horizontal_speed, y, Obj_Chao)) {
+		while(! place_meeting(x + sign(horizontal_speed), y, Obj_Chao)) {
+			x += sign(horizontal_speed);
+		}
+		
+		horizontal_speed = 0;
 	}
 
 	x += horizontal_speed;
@@ -42,14 +49,14 @@ Scr_pulinho();
 
 	
 	if(vida = 0){
-	room_restart()
+	
 	}
 	
 	show_debug_message(vida)
 	
 	if(place_meeting(x+2,y,Obj_enemy)){
-	vida -=0.5
+	vida -=2
 	}else if(place_meeting(x-2,y,Obj_enemy)){
-	vida -=0.5
+	vida -=2
 	}
 	
